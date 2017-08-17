@@ -18,8 +18,6 @@ angular.module('hvlViewer.hvl.hvl-tree-component', [])
             variables: '<'
         },
         controller: function() {
-            this.$onChanges = (changes) => console.log(changes);
-
             this.isString = () => angular.isString(this.node);
             this.isArray = () => angular.isArray(this.node);
             this.isPlainObject = () => angular.isObject(this.node) && !this.isArray() && !this.isString();
