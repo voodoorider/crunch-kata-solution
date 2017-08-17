@@ -1,0 +1,18 @@
+<li ng-if="$ctrl.title">{{$ctrl.title}}</li>
+<li ng-if="$ctrl.isString() && $ctrl.variables">
+    {{ $ctrl.getVariableName($ctrl.node) }}
+</li>
+
+<hvl-tree-node ng-if="$ctrl.isPlainObject()"
+               ng-repeat="(key, value) in $ctrl.node track by $index"
+               title="key"
+               node="value"
+               variables="$ctrl.variables">
+</hvl-tree-node>
+
+<ul ng-if="$ctrl.isArray()">
+    <hvl-tree-node ng-repeat="treeNode in $ctrl.node track by $index"
+                   node="treeNode"
+                   variables="$ctrl.variables">
+    </hvl-tree-node>
+</ul>
